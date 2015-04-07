@@ -1,7 +1,8 @@
-== README
+## Blocmark: Social Bookmarking with Email integration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Made with my mentor at [Bloc](http://bloc.io).
+
+Find the app at [julia-blocmarks](https://julia-blocmarks.herokuapp.com)
 
 Things you may want to cover:
 
@@ -23,6 +24,3 @@ Things you may want to cover:
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
