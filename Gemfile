@@ -37,7 +37,7 @@ group :development, :test do
   gem 'annotate',               '~> 2.5.0'
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
-  #gem 'capybara-webkit',        '~> 1.5.0'
+  gem 'capybara-webkit',        '~> 1.5.0'
   gem 'factory_girl_rails',     '~> 4.5.0'
   gem 'faker'
   gem 'minitest',               '~> 5.5.1'
