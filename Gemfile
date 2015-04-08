@@ -33,10 +33,17 @@ group :production do
 end
 
 group :development, :test do
+  gem 'annotate',               '~> 2.5.0'
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
+  gem 'capybara-webkit',        '~> 1.5.0'
   gem 'factory_girl_rails',     '~> 4.5.0'
+  gem 'faker',                  github: 'conradwt/faker'
+  gem 'populator',              '~> 1.0.0'
+  gem 'rack-mini-profiler',     '~> 0.9.3'
+  gem 'rails-footnotes',        '>= 4.1.6', '<5'
   gem 'rspec-rails',            '~> 3.2.1'
+  gem 'selenium-webdriver',     '~> 2.45.0'
   gem 'sqlite3',                '~> 1.3.10'  
   gem 'spring',                 '~> 1.3.4'
   gem 'web-console',            '~> 2.0'
