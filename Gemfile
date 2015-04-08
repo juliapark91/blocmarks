@@ -35,6 +35,7 @@ end
 group :development, :test do
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
+  gem 'factory_girl_rails',     '~> 4.5.0'
   gem 'rspec-rails',            '~> 3.2.1'
   gem 'sqlite3',                '~> 1.3.10'  
   gem 'spring',                 '~> 1.3.4'
