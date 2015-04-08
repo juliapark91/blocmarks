@@ -1,26 +1,66 @@
-## Blocmark: Social Bookmarking with Email integration
+# Blocmarks
 
-Made with my mentor at [Bloc](http://bloc.io).
+ADD DESCRIPTION HERE
 
-Find the app at [julia-blocmarks](https://julia-blocmarks.herokuapp.com)
+This app powers Blocmarks at http://www.example.com
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+## Software requirements
 
-* System dependencies
+- Rails 4.2.1
 
-* Configuration
+- Ruby 2.2.1p85
 
-* Database creation
+- PostgreSQL 9.3.x or higher
 
-* Database initialization
+## Navigate to the Rails application
 
-* How to run the test suite
+```
+$ cd /path/to/rails/application
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Set configuration files
 
-* Deployment instructions
+```
+$ cp config/initializers/mail.rb.template config/initializers/mail.rb
+```
 
-* ...
+Note:  You may need to edit the above files as necessary for your system.
 
+## Create the database
+
+ ```
+ $ rake db:create
+ ```
+
+## Migrating and seeding the database
+
+```
+$ rake db:migrate
+$ rake db:seed
+```
+
+## Starting the local server
+
+```
+$ rails server
+
+   or
+
+$ rails s
+```
+
+## Support
+
+Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
+
+* {File Bug Reports and Features}[https://github.com/julia/blocmarks/issues]
+
+## License
+
+Blocmarks is released under the <LICENSE-NAME> license.
+
+## Copyright
+
+copyright:: (c) Copyright 2015 Blocmarks. All Rights Reserved.
