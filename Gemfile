@@ -29,16 +29,16 @@ end
 group :production do
   gem 'foreman',                '~> 0.78.0'
   gem 'passenger',              '~> 5.0.6'
-  gem 'pg',                     '~> 0.18.1'
+  #gem 'pg',                     '~> 0.18.1'
 end
 
 group :development, :test do
   gem 'annotate',               '~> 2.5.0'
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
-  gem 'capybara-webkit',        '~> 1.5.0'
+  #gem 'capybara-webkit',        '~> 1.5.0'
   gem 'factory_girl_rails',     '~> 4.5.0'
-  gem 'faker',                  github: 'conradwt/faker'
+  gem 'faker'
   gem 'minitest',               '~> 5.5.1'
   gem 'minitest-reporters',     '~> 1.0.11'
   gem 'populator',              '~> 1.0.0'
