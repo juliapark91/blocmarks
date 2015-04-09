@@ -30,7 +30,7 @@ group :production do
   gem 'foreman',                '~> 0.78.0'
   gem 'passenger',              '~> 5.0.6'
   gem 'pg',                     '~> 0.18.1'
-  gem 'rails_12factor'
+  gem 'rails_12factor',         '~> 0.0.3'
 end
 
 group :development, :test do
@@ -39,7 +39,7 @@ group :development, :test do
   gem 'capybara',               '~> 2.4.4'
   gem 'capybara-webkit',        '~> 1.5.0'
   gem 'factory_girl_rails',     '~> 4.5.0'
-  gem 'faker'
+  gem 'faker',                  github: 'conradwt/faker'
   gem 'minitest',               '~> 5.5.1'
   gem 'minitest-reporters',     '~> 1.0.11'
   gem 'populator',              '~> 1.0.0'
