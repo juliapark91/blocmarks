@@ -43,8 +43,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    annotate (2.5.0)
-      rake
+    annotate (2.6.8)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     ansi (1.5.0)
     arel (6.0.0)
     autoprefixer-rails (5.1.8)
@@ -251,7 +252,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate (~> 2.5.0)
+  annotate (~> 2.6.8)
   bootstrap-sass (~> 3.3.4.1)
   byebug (~> 4.0.5)
   capybara (~> 2.4.4)

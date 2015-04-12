@@ -34,7 +34,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'annotate',               '~> 2.5.0'
+  gem 'annotate',               '~> 2.6.8'
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
   gem 'capybara-webkit',        '~> 1.5.0'
