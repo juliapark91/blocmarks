@@ -9,3 +9,4 @@
 3. commit and push to Github.com your changes using the description from the test file
 4. repeat stepe 1 - 3 until all tests pass within the given test file
 5. submit a pull request for review
+6. please move onto the next checkpoint
