@@ -3,7 +3,7 @@ require 'test_helper'
 class IncomingControllerTest < ActionController::TestCase
  
   def setup
-    @params = { 'sender': 'someone@example.com',
+    @params = { 'sender': 'John Doe <someone@example.com>',
                 'subject': 'top tech to watch in 2015', 
                 'body-plain': 'http://www.top-tech.com' }
   end
