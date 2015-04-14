@@ -8,7 +8,6 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
-gem "minitest"
 require "minitest/autorun"
 require "minitest/reporters"
 require 'capybara/rails'

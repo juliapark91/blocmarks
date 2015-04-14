@@ -76,4 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  #
+  # Customizations
+  #
+  
+  # Default URL options for the Devise mailer in each environment.
+  config.action_mailer.default_url_options = { host: 'julia-blocmarks.herokuapp.com' }
 end
