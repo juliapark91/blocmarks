@@ -9,7 +9,7 @@ if Rails.env.production?
     :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
     :password             => ENV['MAILGUN_SMTP_PASSWORD'],
     :authentication       => 'plain',
-    :content_type:        => 'text/html'
+    :content_type         => 'text/html',
     :enable_starttls_auto => true
   }
 else
