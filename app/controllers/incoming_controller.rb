@@ -18,11 +18,11 @@ class IncomingController < ApplicationController
       end
     end
     
-    # # Check if the topic is nil, if so, create and save a new topic
-    # title = params[:subject]
-    # if user && title
-    #   topic = user.topics.find_or_create_by( title: title )
-    # end 
+    # Check if the topic is nil, if so, create and save a new topic
+    title = params[:subject]
+    if user && title
+      topic = user.topics.find_or_create_by( title: title )
+    end 
 
     # # Now that you're sure you have a valid user and topic, build and save a new bookmark 
     # url = params["body-plain"]
