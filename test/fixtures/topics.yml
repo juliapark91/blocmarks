@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 topic1:
-  title: MyString
-  user_id: 1
+  title: 'dogs'
+  user: user1
 
 topic2:
-  title: MyString
-  user_id: 2
+  title: 'inspirational'
+  user: user2
+
