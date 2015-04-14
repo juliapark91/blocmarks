@@ -1,14 +1,15 @@
 ActionMailer::Base.delivery_method = :smtp
 
-if Rails.env.production? || Rails.env.development?
+if Rails.env.production?
   ActionMailer::Base.smtp_settings = {
     :tls                  => false,
-    :address              => 'smtp.sendgrid.net',
+    :address              => 'smtp.mailgun.org',
     :port                 => 587,
-    :domain               => 'heroku.com',
-    :user_name            => ENV['SENDGRID_USERNAME'],
-    :password             => ENV['SENDGRID_PASSWORD'],
+    :domain               => 'julia-blocmarks.herokuapp.com',
+    :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
+    :password             => ENV['MAILGUN_SMTP_PASSWORD'],
     :authentication       => 'plain',
+    :content_type:        => 'text/html'
     :enable_starttls_auto => true
   }
 else
@@ -23,3 +24,5 @@ else
     :enable_starttls_auto => true
   }
 end
+
+ActionMailer::Base.register_interceptor( DevelopmentMailInterceptor ) if Rails.env.development?
