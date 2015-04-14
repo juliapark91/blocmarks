@@ -24,11 +24,11 @@ class IncomingController < ApplicationController
       topic = user.topics.find_or_create_by( title: title )
     end 
 
-    # # Now that you're sure you have a valid user and topic, build and save a new bookmark 
-    # url = params["body-plain"]
-    # if user && topic && url
-    #   bookmark = Bookmark.create(url: url, topic: topic)
-    # end
+    # Now that you're sure you have a valid user and topic, build and save a new bookmark 
+    url = params["body-plain"]
+    if user && topic && url
+      bookmark = Bookmark.create(url: url, topic: topic)
+    end
 
     head 200
   end
