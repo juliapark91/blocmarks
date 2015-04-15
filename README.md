@@ -55,7 +55,7 @@ $ rails s
 
   ```
   $ git push heroku master
-  $ heroku run db:migrate
+  $ heroku run rake db:migrate
   ```
 
 ## Support
