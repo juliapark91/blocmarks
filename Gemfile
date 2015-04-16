@@ -15,6 +15,8 @@ gem 'figaro',                   '~> 1.1.0'
 gem 'jbuilder',                 '~> 2.0'
 gem 'jquery-rails',             '~> 4.0.3'
 
+gem 'link_thumbnailer'
+
 gem 'sass-rails',               '~> 5.0'
 gem 'simple_form',              '~> 3.1.0'
 

@@ -1,5 +1,14 @@
 <p class="lead"><%= @topic.title %></p>
-<%= render @bookmarks %>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-3">
+      <a href="#" class="thumbnail">
+        <%# @bookmarks.each do |bookmark| %>
+      </a>
+    </div>
+  </div>
+
+<%#= render @bookmarks %>
 
 <%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
 <%= link_to "Delete", topic_path, method: :delete, class: 'btn btn-danger' %>

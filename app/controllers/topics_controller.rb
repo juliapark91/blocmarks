@@ -3,17 +3,12 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
-  def show
-    @topic = Topic.find(params[:id])
-    @bookmarks = @topic.bookmarks
-  end
-
   def new
     @topic = Topic.new
   end
 
   def create
-    @topic = current_user.topics.build(params.require(:topic).permit(:title))
+    @topic = current_user.topics.build( topic_params )
     
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully."
@@ -23,14 +18,19 @@ class TopicsController < ApplicationController
     end
   end
 
+  def show
+    @topic = Topic.find(params[:id])
+    @bookmarks = @topic.bookmarks
+  end
+
   def edit
     @topic = Topic.find(params[:id])
   end
 
   def update
     @topic = Topic.find(params[:id])
-
-    if @topic.update_attributes(params.require(:topic).permit(:title))
+    
+    if @topic.update_attributes( topic_params )
       redirect_to @topic
     else
       flash[:error] = "Error saving topic. Please try again."
@@ -50,4 +50,9 @@ class TopicsController < ApplicationController
     end
   end
 
+  private
+
+  def topic_params
+    params.require(:topic).permit(:title)
+  end
 end
