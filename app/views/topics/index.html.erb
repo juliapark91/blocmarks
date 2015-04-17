@@ -10,7 +10,8 @@
         <div class="col-xs-6 col-md-3">
           <a href="#" class="thumbnail">
             <%# @bookmarks.each do |bookmark| %>
-            <%#= LinkThumbnailer.generate('bookmark') %>
+             <% object = LinkThumbnailer.generate('http://techcrunch.com/') %>
+             <%= object.to_json %>
           </a>
         </div>
       </div>
