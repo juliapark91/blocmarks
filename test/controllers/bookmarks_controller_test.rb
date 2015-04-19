@@ -5,13 +5,13 @@ class BookmarksControllerTest < ActionController::TestCase
     @bookmark = bookmarks( :bookmark1 )
   end
 
-  # test "should get new" do
-  #   sign_in users( :user1 )
-  #
-  #   get :new
-  #   assert_response :success
-  # end
-  #
+  test "should get new" do
+    sign_in users( :user1 )
+  
+    get :new
+    assert_response :success
+  end
+  
   # test "should create bookmark" do
   #   sign_in users( :user1 )
   #
