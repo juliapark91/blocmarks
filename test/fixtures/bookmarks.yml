@@ -12,4 +12,3 @@ bookmark1:
 bookmark2:
   url: <%= Faker::Internet.url %>
   topic: topic2
-
