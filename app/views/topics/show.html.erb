@@ -1,0 +1,5 @@
+<p class="lead"><%= @topic.title %></p>
+<%= render @bookmarks %>
+
+<%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
+<%= link_to "Delete", topic_path, method: :delete, class: 'btn btn-danger' %>
