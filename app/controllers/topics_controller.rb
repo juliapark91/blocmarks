@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show ]
+  
   def index
     @topics = Topic.all
   end
@@ -50,7 +52,7 @@ class TopicsController < ApplicationController
     end
   end
 
-  private
+private
 
   def topic_params
     params.require(:topic).permit(:title)
