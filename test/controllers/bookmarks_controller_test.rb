@@ -7,8 +7,8 @@ class BookmarksControllerTest < ActionController::TestCase
 
   test "should get new" do
     sign_in users( :user1 )
-  
-    get :new
+
+    get :new, topic_id: @bookmark.topic_id
     assert_response :success
   end
   
