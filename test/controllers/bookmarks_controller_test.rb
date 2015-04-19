@@ -12,15 +12,15 @@ class BookmarksControllerTest < ActionController::TestCase
     assert_response :success
   end
   
-  # test "should create bookmark" do
-  #   sign_in users( :user1 )
-  #
-  #   assert_difference('Bookmark.count') do
-  #     post :create, bookmark: { topic_id: @bookmark.topic_id, url: @bookmark.url }
-  #   end
-  #
-  #   assert_redirected_to bookmark_path(assigns(:bookmark))
-  # end
+  test "should create bookmark" do
+    sign_in users( :user1 )
+
+    assert_difference('Bookmark.count') do
+      post :create, bookmark: { topic_id: @bookmark.topic_id, url: @bookmark.url }
+    end
+
+    assert_redirected_to bookmark_path(assigns(:bookmark))
+  end
   #
   # test "should show bookmark" do
   #   get :show, id: @bookmark
