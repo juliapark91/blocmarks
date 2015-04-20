@@ -28,7 +28,7 @@ member.save!
 5.times do
   Topic.create!(
     user: users.sample,
-    title: Faker::Lorem.sentence
+    title: Faker::Lorem.word
     )  
 end
 
