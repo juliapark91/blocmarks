@@ -3,6 +3,8 @@
     <%= link_to(bookmark.url, topic_bookmark_path(bookmark.topic, bookmark), class: "thumbnail") %>
   </div>
   <%= link_to 'Like', '' %>
-  <%= link_to "Delete", [bookmark.topic, bookmark], method: :delete, remote: true %>
+  <% if policy(bookmark).destroy? %>
+    <%= link_to "Delete", [@topic, bookmark], method: :delete, remote: true %>
+  <% end %>
 </div>
 

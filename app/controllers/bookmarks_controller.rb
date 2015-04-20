@@ -11,10 +11,12 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = @topic.bookmarks.build
+    authorize @bookmark
   end
  
   def create
-    @bookmark = @topic.bookmarks.build( bookmark_params )
+    @bookmark = @topic.bookmarks.build( bookmark_params.merge( user_id: current_user.id ) )
+    authorize @bookmark
 
     if @bookmark.save
       redirect_to @topic, notice: "Bookmark was saved."
@@ -25,9 +27,11 @@ class BookmarksController < ApplicationController
   end
  
   def edit
+    authorize @bookmark
   end
 
   def update
+    authorize @bookmark
     if @bookmark.update_attributes( bookmark_params )
       flash[:notice] = "Bookmark updated"
       redirect_to @topic
@@ -38,6 +42,7 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+    authorize @bookmark
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted"
     else
