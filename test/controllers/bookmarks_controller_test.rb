@@ -19,7 +19,7 @@ class BookmarksControllerTest < ActionController::TestCase
       post :create, bookmark: { topic_id: @bookmark.topic_id, url: @bookmark.url }
     end
 
-    assert_redirected_to bookmark_path(assigns(:bookmark))
+    assert_redirected_to topic_bookmarks_path(assigns(:bookmark))
   end
   #
   # test "should show bookmark" do

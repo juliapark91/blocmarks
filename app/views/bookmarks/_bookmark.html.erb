@@ -1,4 +1,5 @@
 <div class="col-xs-6 col-md-3">
   <%#= link_to(image_tag(LinkThumbnailer.generate(bookmark).images.first.src.to_s), topic_bookmark_path, class: "thumbnail") %>
   <%= link_to 'Like', '' %>
+  <%= link_to "Delete", [bookmark.topic, bookmark], method: :delete, remote: true %>
 </div>

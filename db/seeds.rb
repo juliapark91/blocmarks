@@ -15,6 +15,15 @@ end
 
 users = User.all
 
+# Create a member
+member = User.new(
+  name: 'Member User',
+  email: 'member@example.com',
+  password: 'helloworld'
+  )
+member.skip_confirmation!
+member.save!
+
 # Create Topics
 5.times do
   Topic.create!(
