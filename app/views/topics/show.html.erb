@@ -1,16 +1,11 @@
 <p class="lead"><%= @topic.title %></p>
 
-  <div class="row">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <%# @bookmarks.each do |bookmark| %>
-      </a>
-    </div>
-  </div>
+<%= render @topic.bookmarks %>
 
-<%#= render @bookmarks %>
+<div class="row"></div>
+  <%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
+  <%= link_to "Delete", topic_path, method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success' %>
 
-<%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
-<%= link_to "Delete", topic_path, method: :delete, class: 'btn btn-danger' %>
-<%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success' %>
+
 
