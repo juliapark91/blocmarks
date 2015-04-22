@@ -1,0 +1,79 @@
+-- create_table("bookmarks", {:force=>:cascade})
+   -> 0.0058s
+-- add_index("bookmarks", ["topic_id"], {:name=>"index_bookmarks_on_topic_id"})
+   -> 0.0017s
+-- create_table("topics", {:force=>:cascade})
+   -> 0.0015s
+-- add_index("topics", ["user_id"], {:name=>"index_topics_on_user_id"})
+   -> 0.0015s
+-- create_table("users", {:force=>:cascade})
+   -> 0.0081s
+-- add_index("users", ["email"], {:name=>"index_users_on_email", :unique=>true})
+   -> 0.0015s
+-- add_index("users", ["reset_password_token"], {:name=>"index_users_on_reset_password_token", :unique=>true})
+   -> 0.0019s
+-- initialize_schema_migrations_table()
+   -> 0.0048s
+-- create_table("bookmarks", {:force=>:cascade})
+   -> 0.0020s
+-- add_index("bookmarks", ["topic_id"], {:name=>"index_bookmarks_on_topic_id"})
+   -> 0.0018s
+-- create_table("topics", {:force=>:cascade})
+   -> 0.0018s
+-- add_index("topics", ["user_id"], {:name=>"index_topics_on_user_id"})
+   -> 0.0018s
+-- create_table("users", {:force=>:cascade})
+   -> 0.0022s
+-- add_index("users", ["email"], {:name=>"index_users_on_email", :unique=>true})
+   -> 0.0015s
+-- add_index("users", ["reset_password_token"], {:name=>"index_users_on_reset_password_token", :unique=>true})
+   -> 0.0019s
+-- initialize_schema_migrations_table()
+   -> 0.0030s
+rake aborted!
+SocketError: getaddrinfo: nodename nor servname provided, or not known
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/net-http-persistent-2.9.4/lib/net/http/persistent.rb:700:in `start'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/net-http-persistent-2.9.4/lib/net/http/persistent.rb:631:in `connection_for'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/net-http-persistent-2.9.4/lib/net/http/persistent.rb:994:in `request'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer/processor.rb:50:in `perform_request'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer/processor.rb:27:in `block in call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer/processor.rb:35:in `with_valid_url'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer/processor.rb:24:in `call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer/page.rb:17:in `generate'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/link_thumbnailer-2.5.0/lib/link_thumbnailer.rb:16:in `generate'
+/Users/juliapark91/code/blocmarks/app/models/bookmark.rb:14:in `set_image_source'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:432:in `block in make_lambda'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:164:in `call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:164:in `block in halting'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:504:in `call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:504:in `block in call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:504:in `each'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:504:in `call'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:92:in `_run_callbacks'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:776:in `_run_save_callbacks'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/callbacks.rb:302:in `create_or_update'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/persistence.rb:142:in `save!'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/validations.rb:43:in `save!'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/attribute_methods/dirty.rb:29:in `save!'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/transactions.rb:291:in `block in save!'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/transactions.rb:347:in `block in with_transaction_returning_status'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:188:in `within_new_transaction'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/transactions.rb:220:in `transaction'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/transactions.rb:344:in `with_transaction_returning_status'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/transactions.rb:291:in `save!'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/persistence.rb:51:in `create!'
+/Users/juliapark91/code/blocmarks/db/seeds.rb:39:in `block in <top (required)>'
+/Users/juliapark91/code/blocmarks/db/seeds.rb:38:in `times'
+/Users/juliapark91/code/blocmarks/db/seeds.rb:38:in `<top (required)>'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/dependencies.rb:268:in `load'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/dependencies.rb:268:in `block in load'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/dependencies.rb:240:in `load_dependency'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.1/lib/active_support/dependencies.rb:268:in `load'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/railties-4.2.1/lib/rails/engine.rb:547:in `load_seed'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/tasks/database_tasks.rb:250:in `load_seed'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/railties/databases.rake:180:in `block (2 levels) in <top (required)>'
+/Users/juliapark91/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.1/lib/active_record/railties/databases.rake:139:in `block (2 levels) in <top (required)>'
+Tasks: TOP => db:setup => db:seed
+(See full trace by running task with --trace)
