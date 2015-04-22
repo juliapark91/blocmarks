@@ -50,6 +50,11 @@ class TopicsController < ApplicationController
       flash[:error] = "Error deleting topic. Please try again."
       render :show
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
 private

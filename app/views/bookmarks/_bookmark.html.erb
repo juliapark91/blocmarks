@@ -1,7 +1,8 @@
 <div class="col-xs-6 col-md-3">
   <div style="position: relative">
-    <%= link_to(bookmark.url, topic_bookmark_path(bookmark.topic, bookmark), class: "thumbnail") %>
+    <%= link_to(image_tag(bookmark.image_source), topic_bookmark_path(bookmark.topic, bookmark), class: "thumbnail") %>
   </div>
+
   <%= link_to 'Like', '' %>
   <%= link_to "Delete", [bookmark.topic, bookmark], method: :delete, remote: true %>
 </div>
