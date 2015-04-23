@@ -29,17 +29,21 @@ member.save!
   Topic.create!(
     user: users.sample,
     title: Faker::Lorem.word
-    )  
+    ) 
+
 end
 
 topics = Topic.all
 
-# Create Bookmarks
-5.times do
-  Bookmark.create!(
-    topic: topics.sample,
-    url: Faker::Internet.url
-    )
+topics.each do |topic|
+  # Create Bookmarks
+  5.times do
+    Bookmark.create!(
+      topic: topic,
+      user_id: topic.user_id,
+      url: Faker::Internet.url
+      )
+  end
 end
 
 puts "#{User.count} users created"

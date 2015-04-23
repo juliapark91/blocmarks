@@ -2,7 +2,7 @@
   <h4>
     <%= link_to "##{topic.title}", topic_path( topic ) %>
   </h4>
-  <%= link_to "Delete", topic, method: :destroy, remote: true %>
+  <%= link_to "Delete", topic, class: 'btn btn-sm', method: :delete, remote: true %>
 </div>
 
 <div class="row">

@@ -1,7 +1,9 @@
 <h1> Bookmark </h1>
-<%= link_to @bookmark.url, @bookmark.url, :target => "_blank" %>
+  <div style="text-align:center">
+    <%= link_to(image_tag(@bookmark.image_source), @bookmark.url, class: "img-thumbnail", target: "_blank") %>
+  </div>
 <p>
-<div>
+<div style="text-align:center">
   <%= link_to "Edit", edit_topic_bookmark_path, class: 'btn btn-success' %>
   <%= link_to "Delete", topic_bookmark_path, method: :delete, class: 'btn btn-danger' %>
 </div>
