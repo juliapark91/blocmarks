@@ -1,12 +1,10 @@
-<%= content_tag_for(:tr, bookmark) do %>
-  <div class="col-xs-6 col-md-3">
-    <div style="position: relative">
+<%= content_tag_for :div, bookmark, class: 'col-xs-12 col-md-3 col-lg-3' do %>
+  <div style="position: relative">
       <%= link_to(image_tag(bookmark.image_source), topic_bookmark_path(bookmark.topic, bookmark), class: "thumbnail") %>
     </div>
     <div style="text-align:center">
       <%= link_to 'Like', '', class: 'btn btn-xs btn-default' %>
       <%= link_to "Delete", [bookmark.topic, bookmark], method: :delete, remote: true, class: 'btn btn-xs btn-danger' %>
-    </div>
-    <br/>
   </div>
+  <br/>
 <% end %>
