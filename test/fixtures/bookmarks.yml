@@ -1,9 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  url: MyString
-  topic_id: 
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
 
-two:
-  url: MyString
-  topic_id: 
+bookmark1:
+  url: <%= Faker::Internet.url %>
+  topic: topic1
+
+bookmark2:
+  url: <%= Faker::Internet.url %>
+  topic: topic2

@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show ]
+  
   def index
     @topics = Topic.all
   end
@@ -43,14 +45,20 @@ class TopicsController < ApplicationController
     title = @topic.title
 
     if @topic.destroy
-      redirect_to topics_path, notice: "\"#{title}\" was deleted successfully."
+      #redirect_to topics_path
+      flash[:notice] = "\"#{title}\" was deleted successfully."
     else
       flash[:error] = "Error deleting topic. Please try again."
-      render :show
+      #render :show
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
-  private
+private
 
   def topic_params
     params.require(:topic).permit(:title)
