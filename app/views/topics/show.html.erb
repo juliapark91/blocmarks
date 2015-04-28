@@ -7,12 +7,10 @@
       <% end %>
   </div>
   <div class="row" align="right">
-    <% if policy(Bookmark.new).create? %>
-      <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success', style:"float: right" %>
-    <% end %>
+    <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success', style:"float: right" %>
   </div>
   <br/>
-  
+
   <%= render @topic.bookmarks %>
 <% end %>
 
