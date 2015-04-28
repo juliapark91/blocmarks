@@ -1,17 +1,21 @@
-<p class="lead">
-  <%= "##{@topic.title}" %>
+<%= content_tag_for :div, @topic do %>
+  <div align="center">
+    <h1><%= "##{@topic.title}" %></h1>
+      <% if policy(@topic).edit? %>
+        <%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
+        <%= link_to "Delete", topic_path(@topic), method: :delete, remote: true, class: 'btn btn-danger' %>
+      <% end %>
+  </div>
+  <div class="row" align="right">
+    <% if policy(Bookmark.new).create? %>
+      <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success', style:"float: right" %>
+    <% end %>
+  </div>
   <br/>
-    <%= link_to "Edit", edit_topic_path, class: 'btn btn-success' %>
-    <%= link_to "Delete", topic_path(@topic), method: 
-    :delete, class: 'btn btn-danger' %>
-</p>
-
-<%= render @topic.bookmarks %>
-
-<br/>
-<% if policy(Bookmark.new).create? %>
-  <%= link_to "New Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success' %>
+  
+  <%= render @topic.bookmarks %>
 <% end %>
+
 
 
 

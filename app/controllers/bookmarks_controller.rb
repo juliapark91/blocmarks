@@ -46,7 +46,7 @@ class BookmarksController < ApplicationController
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted"
     else
-      flash[:error] = "Error deleting bookmark."
+      flash[:warning] = "Cannot delete bookmark you did not create."
     end
 
     respond_to do |format|

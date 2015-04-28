@@ -5,9 +5,10 @@
       <% if policy(topic).destroy? %>
         <%= link_to "Delete", topic, method: :delete, remote: true, class: 'btn btn-xs btn-danger'%>
       <% end %>
-    </h3> 
+    </h3>
+    <div class="row">
+      <%= render topic.bookmarks %>
+    </div>
   </div> 
-  <div class="row">
-    <%= render topic.bookmarks %>
-  </div>
+
 <% end %>
