@@ -10,6 +10,7 @@ gem 'coffee-rails',             '~> 4.1.0'
 
 gem 'devise',                   '~> 3.4.1'
 
+gem 'faker',                    github: 'conradwt/faker'
 gem 'figaro',                   '~> 1.1.0'
 
 gem 'jbuilder',                 '~> 2.0'
@@ -42,7 +43,6 @@ group :development, :test do
   gem 'byebug',                 '~> 4.0.5'
   gem 'capybara',               '~> 2.4.4'
   gem 'capybara-webkit',        '~> 1.5.0'
-  gem 'faker',                  github: 'conradwt/faker'
   gem 'minitest',               '~> 5.5.1'
   gem 'minitest-reporters',     '~> 1.0.11'
   gem 'populator',              '~> 1.0.0'
