@@ -2,7 +2,7 @@
 
 Blocmarks is a social bookmarking application that allows users to bookmark URLs via email, browse other user's bookmarks and maintain an index of personally categorized bookmarks.
 
-This app powers Blocmarks at http://www.julia-blocmarks.herokuapp.com
+This app powers Blocmarks at http://julia-blocmarks.herokuapp.com/
 
 ## Getting Started
 
