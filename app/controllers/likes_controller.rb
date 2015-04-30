@@ -4,7 +4,7 @@ class LikesController < ApplicationController
 
   def create
     @like = current_user.likes.build( bookmark_id: @bookmark.id )
-    # authorize @like
+    authorize @like
     
     respond_to do |format|
       if @like.save
