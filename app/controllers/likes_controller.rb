@@ -3,38 +3,42 @@ class LikesController < ApplicationController
   before_action :set_bookmark
 
   def create
-    like = current_user.likes.build(bookmark: @bookmark)
-    authorize like
-  
-    if like.save
-      flash[:notice] = "Liked bookmark"
-      redirect_to [@bookmark.topic, @bookmark]
-    else
-      flash[:error] = "Error liking bookmark"
-      redirect_to [@bookmark.topic, @bookmark]
+    @like = current_user.likes.build( bookmark_id: @bookmark.id )
+    # authorize @like
+    
+    respond_to do |format|
+      if @like.save
+        format.html { redirect_to [ @bookmark.topic, @bookmark ], notice: 'Successfully liked bookmark!' }
+        format.js
+      else
+        format.html { redirect_to [ @bookmark.topic, @bookmark ], error: 'Error liking bookmark.'  }
+        format.js
+      end
     end
   end
 
   def destroy
-    like = Like.where(bookmark_id: @bookmark.id, user_id: current_user.id).first
-    authorize like
+    @like = current_user.likes.find_by( bookmark_id: @bookmark.id )
+    authorize @like
 
-    if like.destroy
-      flash[:notice] = "Unliked bookmark"
-      redirect_to [@bookmark.topic, @bookmark]
-    else
-      flash[:error] = "Error unliking bookmark"
-      redirect_to [@bookmark.topic, @bookmark]
+    respond_to do |format|
+      if @like.destroy
+        format.html { redirect_to [ @bookmark.topic, @bookmark ], notice: 'Successfully unliking bookmark!' }
+        format.js
+      else
+        format.html { redirect_to [ @bookmark.topic, @bookmark ], error: 'Error unliking bookmark.'  }
+        format.js
+      end
     end
   end
 
   private
 
   def set_topic
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find( params[:topic_id] )
   end
 
   def set_bookmark
-    @bookmark = @topic.bookmarks.find(params[:bookmark_id])
+    @bookmark = @topic.bookmarks.find( params[:bookmark_id] )
   end
 end
