@@ -1,18 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-<<<<<<< HEAD
-  bookmark_id: 
-  user_id: 
+  user: user1 
+  bookmark: bookmark1 
 
 two:
-  bookmark_id: 
-  user_id: 
-=======
-  user_id: 
-  bookmark_id: 
-
-two:
-  user_id: 
-  bookmark_id: 
->>>>>>> 4b4b3f21d33279723ca30a98e58ac6faa03193be
+  user: user2 
+  bookmark: bookmark2
