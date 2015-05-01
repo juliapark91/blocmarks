@@ -1,0 +1,1 @@
+$(<%= dom_id( @like ) %>).html("<%= escape_javacsript(render partial: 'likes/like', locals: { bookmark: @bookmark, like: @like }) %>");

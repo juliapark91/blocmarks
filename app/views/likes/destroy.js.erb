@@ -1,0 +1,5 @@
+<% if @like.destroyed? %>
+  $(<%= dom_id( @like ) %>).fadeOut(900);
+<% else %>
+  $(<%= dom_id( @like ) %>).prepend("<div class='alert alert-danger'><%= flash[:error] %></div>");
+<% end %>

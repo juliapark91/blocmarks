@@ -6,7 +6,7 @@
   </div>
   <br/>
     <div style="text-align:center">
-      <%= render partial: 'likes/like', locals: { bookmark: @bookmark} %>
+      <%= render partial: 'likes/like', locals: { bookmark: @bookmark, remote: true } %>
       <% if policy(@bookmark).edit? %>
         <%= link_to "Edit", edit_topic_bookmark_path, class: 'btn btn-success' %>
         <%= link_to "Delete", topic_bookmark_path, method: :delete, remote: true, class: 'btn btn-danger' %>

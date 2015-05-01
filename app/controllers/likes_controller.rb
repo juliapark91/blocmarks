@@ -4,27 +4,30 @@ class LikesController < ApplicationController
 
   def create
     like = current_user.likes.build(bookmark: @bookmark)
-    authorize like
+    authorize @like
   
-    if like.save
+    if @like.save
       flash[:notice] = "Liked bookmark"
-      redirect_to [@topic]
+      redirect_to(:back)
     else
       flash[:error] = "Error liking bookmark"
-      redirect_to [@topic]
+      redirect_to(:back)
     end
   end
 
   def destroy
-    like = Like.where(bookmark_id: @bookmark.id, user_id: current_user.id).first
+    @like = current_user.likes.where(bookmark_id: @bookmark.id, user_id: current_user.id).first
     authorize like
 
-    if like.destroy
+    if @like.destroy
       flash[:notice] = "Unliked bookmark"
-      redirect_to [@topic]
     else
       flash[:error] = "Error unliking bookmark"
-      redirect_to [@topic]
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
