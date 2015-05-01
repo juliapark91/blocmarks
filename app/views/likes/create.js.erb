@@ -1,1 +1,2 @@
-$(<%= dom_id( @like ) %>).html("<%= escape_javacsript(render partial: 'likes/like', locals: { bookmark: @bookmark, like: @like }) %>");
+$( "#<%= dom_id( @bookmark ) %> .like" ).replaceWith( "<%= j render( partial: 'likes/like', locals: { bookmark: @bookmark } ) %>" );
+

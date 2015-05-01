@@ -4,6 +4,7 @@ class Bookmark < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   before_save :normalize_url
   before_save :set_image_source
+  has_many :likes, dependent: :destroy
 
 private 
 
