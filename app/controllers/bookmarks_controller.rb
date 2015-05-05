@@ -6,7 +6,6 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = @topic.bookmarks.find(params[:id])
-    @like = current_user.likes.build(bookmark_id: @bookmark.id)
   end
 
   def new
