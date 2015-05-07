@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @user_bookmarks = @user.bookmarks
-    @user_likes = @user.likes
+    @topics = Topic.all
+    
+    # @user_bookmarks = current_user.bookmarks
+    # @user_likes = current_user.likes
   end
 end
