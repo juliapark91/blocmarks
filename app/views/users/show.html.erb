@@ -1,18 +1,9 @@
 <h1 class="text-center">My Blocmarks</h1>
-  <% @topics.each do |topic| %>
-    <% if topic.bookmarks.where(user: current_user).present? %>
-      <%= render topic %>
-    <% end %>
+  <% @created_bookmarks.group_by(&:topic).each do | topic, bookmarks | %>
+    <%= render partial: 'users/topic', locals: { topic: topic, bookmarks: bookmarks } %>
   <% end %>
 
 <h1 class="text-center">Liked Blocmarks</h1>
-  <% @likes.each do |like| %>
-    <%= render partial: 'bookmarks/bookmark', locals: { topic: @topic, bookmark: like.bookmark, like: like } %>
+  <% @liked_bookmarks.group_by(&:topic).each do | topic, bookmarks | %>
+    <%= render partial: 'users/topic', locals: { topic: topic, bookmarks: bookmarks } %>
   <% end %>
-
-  <%# @topics.each do |topic| %>
-    <%# if current_user.likes.includes(:bookmark).where("bookmarks.topic_id = ?", topic.id) %>
-      <%#= render topic, collection: current_user.likes %>
-    <%# end %>
-  <%# end %>
-

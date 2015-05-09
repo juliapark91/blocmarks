@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @topics = Topic.all
-    @likes = current_user.likes
-
-    # @user_bookmarks = current_user.bookmarks
-    @user_likes = current_user.likes
+    @created_bookmarks = current_user.created_bookmarks
+    
+    @liked_bookmarks = current_user.liked_bookmarks
   end
 end
