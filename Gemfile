@@ -27,6 +27,8 @@ gem 'turbolinks',               '~> 2.5.3'
 
 gem 'uglifier',                 '>= 1.3.0'
 
+gem 'will_paginate',            '~> 3.0.5'
+
 group :doc do
   gem 'sdoc',                   '~> 0.4.0'
 end
