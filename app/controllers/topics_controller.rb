@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
   
   def index
-    @topics = Topic.all
+    @topics = Topic.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -24,7 +24,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @bookmarks = @topic.bookmarks
+    @bookmarks = @topic.bookmarks.paginate(page: params[:page], per_page: 4)
   end
 
   def edit
