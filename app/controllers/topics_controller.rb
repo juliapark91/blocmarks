@@ -24,7 +24,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @bookmarks = @topic.bookmarks.paginate(page: params[:page], per_page: 4)
   end
 
   def edit

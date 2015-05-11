@@ -5,6 +5,7 @@ class Bookmark < ActiveRecord::Base
   before_save :normalize_url
   before_save :set_image_source
   has_many :likes, dependent: :destroy
+  default_scope { order('created_at DESC') }
 
 private 
 
