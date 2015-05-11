@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
   
   def index
-    @topics = Topic.all
+    @topics = Topic.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -50,11 +50,9 @@ class TopicsController < ApplicationController
     authorize @topic
 
     if @topic.destroy
-      #redirect_to topics_path
       flash[:notice] = "\"#{title}\" was deleted successfully."
     else
       flash[:error] = "Error deleting topic. Please try again."
-      #render :show
     end
 
     respond_to do |format|

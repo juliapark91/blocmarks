@@ -5,6 +5,7 @@ class Bookmark < ActiveRecord::Base
   before_save :normalize_url
   before_save :set_image_source
   has_many :likes, dependent: :destroy
+  default_scope { order('created_at DESC') }
 
 private 
 
@@ -14,8 +15,6 @@ private
   end  
 
   def set_image_source
-    #object = LinkThumbnailer.generate( self.url )
-    #self.image_source = object.images.first.src.to_s || "http://placehold.it/150x150"
     self.image_source = Faker::Avatar.image("my-own-slug", "150x150")
   end
 end
