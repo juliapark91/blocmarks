@@ -50,11 +50,9 @@ class TopicsController < ApplicationController
     authorize @topic
 
     if @topic.destroy
-      #redirect_to topics_path
       flash[:notice] = "\"#{title}\" was deleted successfully."
     else
       flash[:error] = "Error deleting topic. Please try again."
-      #render :show
     end
 
     respond_to do |format|
