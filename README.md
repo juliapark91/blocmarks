@@ -62,7 +62,7 @@ $ rails s
 
 Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
 
-* {File Bug Reports and Features}[https://github.com/julia/blocmarks/issues]
+* {File Bug Reports and Features}[https://github.com/juliapark91/blocmarks/issues]
 
 ## License
 
