@@ -2,47 +2,35 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 require 'faker'
 
-# Create Users
 3.times do
-  user = User.new(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: Faker::Lorem.characters(8)
-    )
+  user = User.new( name:     Faker::Name.name,
+                   email:    Faker::Internet.email,
+                   password: Faker::Lorem.characters(8) )
   user.skip_confirmation!
   user.save!
 end
 
 users = User.all
 
-# Create a member
-member = User.new(
-  name: 'Member User',
-  email: 'member@example.com',
-  password: 'helloworld'
-  )
+member = User.new( name:     'Member User',
+                   email:    'member@example.com',
+                   password: 'helloworld' )
 member.skip_confirmation!
 member.save!
 
 # Create Topics
-5.times do
-  Topic.create!(
-    user: users.sample,
-    title: Faker::Lorem.word
-    ) 
-
+25.times do
+  Topic.create!( user: users.sample,
+                 title: Faker::English.word ) 
 end
 
 topics = Topic.all
 
 topics.each do |topic|
-  # Create Bookmarks
   5.times do
-    Bookmark.create!(
-      topic: topic,
-      user_id: topic.user_id,
-      url: Faker::Internet.url
-      )
+    Bookmark.create!( topic:   topic,
+                      user_id: topic.user_id,
+                      url:     Faker::Internet.url )
   end
 end
 
