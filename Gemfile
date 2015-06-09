@@ -18,6 +18,8 @@ gem 'jquery-rails',             '~> 4.0.3'
 
 gem 'link_thumbnailer',         '~> 2.5.0'
 
+gem 'mixpanel-ruby'
+
 gem 'pundit',                   '~> 1.0.0'
 
 gem 'sass-rails',               '~> 5.0'
